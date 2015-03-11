@@ -78,15 +78,13 @@
         { :x (inc (east obj))
           :y (-> obj (pos) (:y) (+ j)) }))))
 
-(defrecord DotCatalyst [dots rotate pos width height]
+(defrecord DotCatalyst [dots pos rotate width height]
   Catalyst
     (activate [this game-state]
       ; TODO - stocks tiles based on number of dots
       )
   Bounded
-    (pos [this]
-      { :x (:x this)
-        :y (:y this) })
+    (pos [this] (:pos this))
     (width [this] (:width this))
     (height [this] (:height this))
 
@@ -103,9 +101,7 @@
       ; TODO - extra turn for current player
       )
   Bounded
-    (pos [this]
-      { :x (:x this)
-        :y (:y this) })
+    (pos [this] (:pos this))
     (width [this] (:width this))
     (height [this] (:height this))
   HasArt
@@ -113,17 +109,15 @@
       { :filename "plus-corner.png"
         :rotate (:rotate this) }))
 
-(defrecord Pul [color score rotate width height]
+(defrecord Pul [color score pos rotate width height]
   BindPoint
     (color [this] (:color this))
     (score [this] (:score this))
   Bounded
-    (pos [this]
-      { :x (:x this)
-        :y (:y this) })
+    (pos [this] (:pos this))
     (width [this] (:width this))
     (height [this] (:height this))
   HasArt
     (art-desc [this]
-      { :filename (str "pul-" (color this) "-corner.png"
+      { :filename (str "pul-" (color this) "-corner.png")
         :rotate (:rotate this) }))
