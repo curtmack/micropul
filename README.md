@@ -1,6 +1,6 @@
 # micropul
 
-A (work-in-progress) implementation of micropul, the competitive puzzle game.
+A (work-in-progress) implementation of micropul, a competitive puzzle game.
 
 Rules are freely available at the game's official website: http://neutralbox.com/micropul/
 
